@@ -5,6 +5,10 @@ from api.serializers import ManufacturerSerializer, ShoeColorSerializer, ShoeTyp
 from api.models import Manufacturer, ShoeColor, ShoeType, Shoe
 
 # Create your views here.
+def index(request):
+    return render(request, 'index.html')
+
+
 class ManufacturerViewSet(ModelViewSet):
     serializer_class = ManufacturerSerializer
     basename = 'manufacturer'
