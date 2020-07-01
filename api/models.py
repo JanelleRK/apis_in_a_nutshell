@@ -3,30 +3,15 @@ from django.db import models
 # Create your models here.
 class Manufacturer(models.Model):
     name = models.CharField(max_length=30)
-    website = models.URLField(max_length= 300, null=True)
+    website = models.URLField(max_length=300, null=True)
 
     def __str__(self):
         return self.name
 
 
 class ShoeType(models.Model):
-    SNEAKER = 'Sneaker'
-    BOOT = 'Boot'
-    SANDAL = 'Sandal'
-    DRESS = 'Dress'
-    OTHER = 'Other'
-    SHOE_TYPE_CHOICES = [
-        (SNEAKER, 'Sneaker'),
-        (BOOT, 'Boot'),
-        (SANDAL, 'Sandal'),
-        (DRESS, 'Dress'),
-        (OTHER, 'Other'),
-    ]
-    style = models.CharField(
-        max_length=7,
-        choices=SHOE_TYPE_CHOICES,
-        default=SNEAKER,
-    )
+    style = models.CharField(max_length=20)
+
 
     def __str__(self):
         return self.style

@@ -6,7 +6,8 @@ from api.models import Manufacturer, ShoeColor, ShoeType, Shoe
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    shoes = Shoe.objects.all()
+    return render(request, 'index.html', {'shoes':shoes})
 
 
 class ManufacturerViewSet(ModelViewSet):

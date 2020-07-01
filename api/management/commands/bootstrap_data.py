@@ -24,8 +24,8 @@ class Command(BaseCommand):
             'Black'
         ]
         try:
-            for data in style:
-                ShoeType.objects.create(style=data)
+            for shoe_type in style:
+                ShoeType.objects.create(style=shoe_type)
             for color in color_name:
                 ShoeColor.objects.create(color_name=color)
             print("Object created")
